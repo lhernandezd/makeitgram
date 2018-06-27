@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.select(:description).order(created_at: :desc).limit(10) #Esta variable es para usarla en la vista
+    @posts = Post.select(:description, :created_at).order(created_at: :desc).limit(10) #Esta variable es para usarla en la vista
   end
 
   def new
