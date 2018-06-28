@@ -1,7 +1,12 @@
 <% if @post.errors.full_messages.any? %>
+  <div class="errors_full_messages">
+  <p>The form contains <%= @post.errors.full_messages.size %> error(s)</p>
+  <ul>
   <% @post.errors.full_messages.each do |message| %>
-  <p><%= message %></p>
+    <li><%= message %></li>
   <% end %>
+  </ul>
+</div>
 <% end %>
 <%= form_for(@post) do |form|%>
   <div class="form-group">
