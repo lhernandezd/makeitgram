@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.select(:description, :created_at).order(created_at: :desc).limit(10) #Esta variable es para usarla en la vista
+    @posts = Post.order(created_at: :desc).limit(10) #Esta variable es para usarla en la vista
   end
 
   def new
@@ -22,8 +22,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:description, :location)
+      params.require(:post).permit(:photo, :description, :location)
     end
 end
-
 
