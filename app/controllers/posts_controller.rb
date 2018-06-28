@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])#en el find si solo es una variable busca por defecto el id
+  end
+
   private
     def post_params
       params.require(:post).permit(:description, :location)
