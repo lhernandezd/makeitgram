@@ -7,7 +7,9 @@
   border: 1px solid #e6e6e6;
   margin: 60px;
   &__header {
-    padding: 16px 16px 0px;
+    padding: 16px 16px 16px;
+    img {width: 40px; height: 40px;}
+    p {display: inline;}
   }
   &__photo img {
     width: 100%;
