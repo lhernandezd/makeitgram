@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @posts = Post.order(created_at: :desc).limit(10) #Esta variable es para usarla en la vista
+    @posts = Post.latest(10) #Esta variable es para usarla en la vista
   end
 
   def new

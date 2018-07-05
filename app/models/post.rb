@@ -5,4 +5,9 @@ class Post < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :user
+
+  #Latest posts
+  def self.latest(num)
+    order(created_at: :desc).limit(num)
+  end
 end

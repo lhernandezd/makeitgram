@@ -10,4 +10,9 @@ class User < ApplicationRecord
   def name
     "#{firstname} #{lastname}"
   end
+
+  #getProfile
+  def self.getProfile(username)
+    find_by(username: username)
+  end
 end
