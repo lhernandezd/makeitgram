@@ -6,4 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
+
+  def name
+    "#{firstname} #{lastname}"
+  end
 end

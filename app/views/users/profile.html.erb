@@ -1,0 +1,15 @@
+<div class="profile__header d-flex justify-content-start">
+  <div class="row">
+    <div class="col-3">
+      <%= image_tag @user.avatar.url(:thumb), class:"rounded-circle mr-3" %>
+    </div>
+    <div class="col">
+      <h1><%= @user.name %></h1>
+      <p>@<%= @user.username %></p>
+    </div>
+  </div>
+</div>
+
+<% (@user.posts).each do |post| %>
+  <%= render partial: 'posts/post', locals: { item: post, show_link: true } %>
+<% end %>

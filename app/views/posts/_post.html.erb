@@ -1,7 +1,7 @@
 <div class="post">
   <div class="post__header">
     <%= image_tag item.user.avatar.url(:thumb), class:"rounded-circle mr-3" %>
-    <p><%= item.user.username %></p>
+    <%= link_to item.user.username,users_profile_path(item.user.username)%>
   </div>
   <div class="post__photo">
     <% if show_link %>
