@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])#en el find si solo es una variable busca por defecto el id
+    @comment = Comment.new
   end
 
   private

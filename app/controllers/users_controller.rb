@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def profile
-    @user = User.getProfile(username: params[:username])
+    @user = User.getProfile(params[:username])
   end
 end
