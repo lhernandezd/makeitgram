@@ -4,8 +4,11 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      respond_to :js
-      #redirect_to root_path
+      ActionCable.server.broadcast 'comments_channel', {
+        post: @comment.post,
+        comment: render(partial: 'comment', locals: { comment: @comment })
+      }
+      head :ok
     else
       redirect_to root_path, error: "Text can't be blank" 
     end
